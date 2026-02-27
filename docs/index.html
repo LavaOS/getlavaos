@@ -403,6 +403,40 @@
     main section h2, main section p {
       text-shadow: 0 0 8px rgba(0,0,0,0.5);
     }
+    .cb {
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      padding: 10px;
+    }
+    .cb p {
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      font-size: 1.1rem;
+      line-height: 1.4;
+      opacity: 0.85;
+      text-align: center;
+      user-select: text;
+    }
+
+    table {
+      border-collapse: collapse;
+      border: 2px solid rgb(140 140 140);
+      font-family: sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+    }
+
+    caption {
+      caption-side: bottom;
+      padding: 10px;
+      font-weight: bold;
+    }
+
+    th,
+    td {
+      border: 1px solid rgb(160 160 160);
+      padding: 8px 10px;
+    }
   </style>
 </head>
 <body>
@@ -434,7 +468,102 @@
 
       <!-- Main Content -->
       <main id="content" class="col-9">
-        <section id="section1"><h2>Getting Started</h2><p>Nothing to show:) docs will be available soon</p></section>
+        <section id="section1">
+          <h2>🚀 Getting Started with LavaOS</h2>
+          <p>Welcome to the official documentation of LavaOS! A lightweight, developer-friendly, Unix-like operating system built from scratch. Whether you just want to try it out or dive deep into the source code, this guide will get you up and running fast ⚡</p>
+          <h4>📦 Installation Options</h4>
+          <p>You have two main ways to use LavaOS:</p>
+          <p><li>Option 1: Download Prebuilt Image</li></p>
+          <p>The easiest way to get started is by downloading the latest release:</p>
+          <p>Visit the official GitHub repository:</p>
+          <p><a href="https://github.com/LavaOS/LavaOS">👉 LavaOS GitHub Repository</a></p>
+          <p>Download the latest release</p>
+          <p>Run it using an emulator like QEMU</p>
+          <p><li>Option 2: Build from Source (Recommended for Developers)</li></p>
+          <p>If you want the full experience (and control 😏), build LavaOS yourself</p>
+          <h4>🛠️ Requirements</h4>
+          <p>Before building, make sure you have:</p>
+          <ul>
+            <li>A Linux distribution (recommended: Arch Linux)</li>
+            <li>gcc</li>
+            <li>git</li>
+            <li>qemu</li>
+            <li>Enough patience… and caffeine ☕💀</li>
+          </ul>
+          <h4>💻 Hardware Requirements</h4>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Resource</th>
+                <th scope="col">Minimum</th>
+                <th scope="col">Recommended</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">RAM</th>
+                <td>4 GiB</td>
+                <td>8-16 GiB</td>
+              </tr>
+              <tr>
+                <th scope="row">Swap</th>
+                <td>8 GiB</td>
+                <td>16 GiB</td>
+                </tr>
+              <tr>
+                <th scope="row">Storage</th>
+                <td>~5 GiB</td>
+                <td>SSD strongly recommended</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>⏱️ Build time: ~4–8 hours depending on your system</p>
+          <h4>📥 Clone the Source Code</h4>
+          <p>Open your terminal and run:</p>
+          <div class="cb">
+            <p>bash</p>
+            <code>git clone https://github.com/LavaOS/LavaOS.git</code>
+            <br>
+            <code>cd LavaOS</code>
+          </div>
+          <h4>🔨 Build LavaOS</h4>
+          <p>Now let's build the system:</p>
+          <div class="cb">
+            <p>bash</p>
+            <code>cc nob.c -o nob</code>
+            <br>
+            <code>./nob bruh</code>
+          </div>
+          <h4>⚙️ What happens here?</h4>
+          <ul>
+            <li>Compiles the build system (nob)</li>
+            <li>Builds the entire OS from source</li>
+            <li>Automatically launches it using QEMU</li>
+          </ul>
+          <h4>🚀 First Boot</h4>
+          <p>If everything goes well, LavaOS should boot inside QEMU.</p>
+          <p>From here, you can:</p>
+          <ul>
+            <li>Explore the shell</li>
+            <li>Run basic commands like echo</li>
+            <li>Start hacking on the system 😈</li>
+          </ul>
+          <h4>⚠️ Notes & Tips</h4>
+          <ul>
+            <li>Build failures? Check dependencies first.</li>
+            <li>Low RAM = slow build (or pain 💀)</li>
+            <li>SSD makes a huge difference.</li>
+            <li>This OS is developer-first, so expect to build things yourself.</li>
+          </ul>
+          <h4>🧠 What’s Next?</h4>
+          <p>Now that you're up and running:</p>
+          <ul>
+            <li>Dive into the kernel</li>
+            <li>Explore the initramfs</li>
+            <li>Start writing your own programs</li>
+            <li>Break things… then fix them 😄</li>
+          </ul>
+        </section>
       </main>
     </div>
   </div>
@@ -450,7 +579,7 @@
 
   links.forEach(link => {
     link.addEventListener('click', (e) => {
-      e.preventDefault(); // جلوگیری از jump به anchor
+      e.preventDefault();
 
       links.forEach(l => l.classList.remove('active'));
       sections.forEach(s => s.classList.remove('active'));
